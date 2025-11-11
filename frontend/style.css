@@ -1,0 +1,37 @@
+:root {
+  --bg: #0f1220;
+  --panel: #171a2b;
+  --accent: #6c7cff;
+  --text: #e9ecff;
+  --muted: #aab0d4;
+  --border: #242845;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.5 Inter, system-ui, sans-serif; }
+.app { display: grid; grid-template-columns: 320px 1fr; height: 100vh; }
+.sidebar { background: var(--panel); border-right: 1px solid var(--border); padding: 16px; overflow: auto; }
+.brand { font-weight: 700; letter-spacing: .5px; margin-bottom: 12px; }
+.user label { display:block; color: var(--muted); font-size: 12px; margin-bottom: 6px; }
+.user input { width: 100%; padding: 8px 10px; border: 1px solid var(--border); background: #0f1325; color: var(--text); border-radius: 8px; }
+button { background: var(--accent); color: white; border: 0; border-radius: 10px; padding: 8px 12px; cursor: pointer; }
+button:disabled { opacity: .6; cursor: not-allowed; }
+.section { margin-top: 18px; }
+.section h3 { margin: 16px 0 8px; font-size: 14px; color: var(--muted); }
+#sessions { display: grid; gap: 8px; }
+.session-item { padding: 8px 10px; border: 1px solid var(--border); border-radius: 8px; cursor: pointer; background: #0f1325; }
+.session-item.active { outline: 2px solid var(--accent); }
+
+.chat { display: grid; grid-template-rows: auto 1fr auto; }
+.chat-header { padding: 14px 18px; border-bottom: 1px solid var(--border); background: var(--panel); }
+.messages { padding: 16px; overflow: auto; display: flex; flex-direction: column; gap: 12px; }
+.msg { max-width: 820px; padding: 12px 14px; border-radius: 12px; }
+.msg.user { background: #232848; align-self: flex-end; }
+.msg.assistant { background: #141935; align-self: flex-start; }
+.msg small { display: block; color: var(--muted); margin-top: 6px; }
+
+.msg-form { display: grid; grid-template-columns: 1fr auto; gap: 10px; padding: 12px; border-top: 1px solid var(--border); background: var(--panel); }
+.msg-form input { padding: 10px 12px; border-radius: 10px; border: 1px solid var(--border); background: #0f1325; color: var(--text); }
+@media (max-width: 900px) {
+  .app { grid-template-columns: 1fr; }
+  .sidebar { display: none; }
+}

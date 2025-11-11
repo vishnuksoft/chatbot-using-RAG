@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>RAG Chat</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">RAG Chat</div>
+      <div class="user">
+        <label>User</label>
+        <input id="userId" placeholder="harish@ksoft" value="demo-user"/>
+      </div>
+      <button id="newChatBtn">+ New Chat</button>
+      <div class="section">
+        <h3>Ingest</h3>
+        <form id="uploadForm">
+          <input type="file" id="files" multiple accept=".pdf,.txt,.md,.csv,.log"/>
+          <button type="submit">Upload</button>
+        </form>
+        <form id="urlForm">
+          <input id="urlInput" placeholder="https://example.com/article"/>
+          <button type="submit">Add URL</button>
+        </form>
+      </div>
+      <div class="section" id="sessions"></div>
+    </aside>
+
+    <main class="chat">
+      <div id="chatHeader" class="chat-header">No session</div>
+      <div id="messages" class="messages"></div>
+      <form id="msgForm" class="msg-form">
+        <input id="msgInput" placeholder="Type a message..." autocomplete="off"/>
+        <button>Send</button>
+      </form>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
