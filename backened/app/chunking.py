@@ -4,6 +4,7 @@ from config import CHUNK_SIZE, CHUNK_OVERLAP
 
 def _split_sentences(text: str) -> List[str]:
     text = re.sub(r'\s+', ' ', text).strip()
+    print("text:",text)
     sents = re.split(r'(?<=[.!?])\s+', text)
     return [s for s in sents if s]
 
